@@ -6,8 +6,8 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ self, utils, nixpkgs, ... }:
-    (utils.lib.poetry2nixWrapper nixpkgs inputs {
+  outputs = { self, utils, nixpkgs, ... }:
+    (utils.lib.poetry2nixWrapper nixpkgs {
       name = "progression";
       poetryArgs = {
         projectDir = ./.;
